@@ -19,7 +19,7 @@
       "generateNoMatch": true
     },
     "_version": 1.2,
-    "updatedAt": "2023-05-06T06:26:50.441Z",
+    "updatedAt": "2023-05-06T08:05:49.639Z",
     "creatorID": 130972,
     "updatedBy": 130972,
     "apiPrivacy": "private",
@@ -33,7 +33,8 @@
       "timestamp",
       "platform",
       "locale",
-      "rippleWalletAddress"
+      "rippleWalletAddress",
+      "nft_id"
     ],
     "platformData": {
       "slots": [],
@@ -70,7 +71,7 @@
           "6455ebbf46851d8e9700eb42"
         ],
         "rootDiagramID": "6455ebbf46851d8e9700eb42",
-        "updatedAt": "2023-05-06T06:26:50.442Z",
+        "updatedAt": "2023-05-06T08:05:49.640Z",
         "updatedBy": 130972
       }
     ],
@@ -3063,7 +3064,7 @@
           "type": "api",
           "data": {
             "name": "",
-            "url": "http://s1.ripple.com:51234/account_info",
+            "url": "http://s1.ripple.com:51234/",
             "body": [
               {
                 "key": "",
@@ -3098,8 +3099,38 @@
               "builtIn": {
                 "next": {
                   "type": "next",
-                  "target": null,
-                  "id": "6455ebf18774ed67637b6f90"
+                  "target": "645607dcb767ba8342cb87ed",
+                  "id": "6455ebf18774ed67637b6f90",
+                  "data": {
+                    "points": [
+                      {
+                        "point": [
+                          652.55,
+                          325.65
+                        ]
+                      },
+                      {
+                        "point": [
+                          724.43,
+                          325.65
+                        ]
+                      },
+                      {
+                        "point": [
+                          724.43,
+                          644.49
+                        ]
+                      },
+                      {
+                        "point": [
+                          700.43,
+                          644.49
+                        ],
+                        "reversed": true,
+                        "allowedToTop": false
+                      }
+                    ]
+                  }
                 },
                 "fail": {
                   "type": "fail",
@@ -3115,10 +3146,11 @@
         "6455ebf18774ed67637b6f92": {
           "type": "block",
           "data": {
-            "name": "New Block 4",
+            "name": "Ripple Account Info API",
             "steps": [
               "6455ebf18774ed67637b6f8f"
-            ]
+            ],
+            "color": ""
           },
           "nodeID": "6455ebf18774ed67637b6f92",
           "coords": [
@@ -3139,6 +3171,11 @@
               {
                 "id": "1z11e3619",
                 "name": "Transactions",
+                "actions": []
+              },
+              {
+                "id": "pf9g35p1",
+                "name": "NFTs",
                 "actions": []
               }
             ],
@@ -3231,25 +3268,31 @@
                       },
                       {
                         "point": [
-                          374.61,
+                          340.11,
                           -915.28
                         ]
                       },
                       {
                         "point": [
-                          374.61,
-                          -403.32
+                          340.11,
+                          -585.27
                         ]
                       },
                       {
                         "point": [
-                          677.7,
-                          -403.32
+                          608.69,
+                          -585.27
                         ],
                         "allowedToTop": false
                       }
                     ]
                   }
+                },
+                {
+                  "id": "6455f40343bba062f9f19447",
+                  "type": "",
+                  "target": "6456093ab767ba8342cb8823",
+                  "data": {}
                 }
               ]
             },
@@ -3306,7 +3349,7 @@
                 "val": ""
               }
             ],
-            "content": "{\n    \"method\": \"fee\",\n    \"params\": [{}]\n}",
+            "content": "{\n  \"method\": \"nft_sell_offers\",\n  \"params\": [{\n    \"nft_id\": \"{nft_id}\",\n    \"ledger_index\": \"validated\"\n  }]\n}",
             "mappings": [
               {
                 "path": "",
@@ -3321,8 +3364,9 @@
               "builtIn": {
                 "next": {
                   "type": "next",
-                  "target": null,
-                  "id": "6455f0708774ed67637b6fba"
+                  "target": "64560a5d850b17c661724ab6",
+                  "id": "6455f0708774ed67637b6fba",
+                  "data": {}
                 },
                 "fail": {
                   "type": "fail",
@@ -3338,15 +3382,16 @@
         "6455f0708774ed67637b6fbc": {
           "type": "block",
           "data": {
-            "name": "New Block 7",
+            "name": "NFT Sell Offer",
             "steps": [
               "6455f0708774ed67637b6fb9"
-            ]
+            ],
+            "color": ""
           },
           "nodeID": "6455f0708774ed67637b6fbc",
           "coords": [
-            1385.6885001169494,
-            -485.21177912312226
+            1855.5732649711701,
+            -652.63389639903
           ]
         },
         "6455f1998774ed67637b6fc3": {
@@ -3373,9 +3418,37 @@
               "dynamic": [
                 {
                   "type": "",
-                  "target": "6455f0708774ed67637b6fb9",
+                  "target": "6455f41143bba062f9f19456",
                   "id": "6455f1998774ed67637b6fc4",
-                  "data": {}
+                  "data": {
+                    "points": [
+                      {
+                        "point": [
+                          940.69,
+                          -585.02
+                        ]
+                      },
+                      {
+                        "point": [
+                          976.04,
+                          -585.02
+                        ]
+                      },
+                      {
+                        "point": [
+                          976.04,
+                          -769.76
+                        ]
+                      },
+                      {
+                        "point": [
+                          1011.39,
+                          -769.76
+                        ],
+                        "allowedToTop": false
+                      }
+                    ]
+                  }
                 }
               ]
             }
@@ -3392,8 +3465,8 @@
           },
           "nodeID": "6455f1998774ed67637b6fc6",
           "coords": [
-            843.7036612566118,
-            -482.81522034732484
+            774.6871420629526,
+            -664.7678618578813
           ]
         },
         "6455f2568774ed67637b6ff4": {
@@ -3436,6 +3509,26 @@
                       {
                         "type": "value",
                         "value": "transaction"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": null,
+                "name": "",
+                "value": [
+                  {
+                    "logicInterface": "variable",
+                    "type": "contains",
+                    "value": [
+                      {
+                        "type": "variable",
+                        "value": "last_utterance"
+                      },
+                      {
+                        "type": "value",
+                        "value": "nft"
                       }
                     ]
                   }
@@ -3504,25 +3597,18 @@
                       },
                       {
                         "point": [
-                          441.16,
-                          -584.39
+                          608.69,
+                          -585.27
                         ]
-                      },
-                      {
-                        "point": [
-                          441.16,
-                          -403.32
-                        ]
-                      },
-                      {
-                        "point": [
-                          677.7,
-                          -403.32
-                        ],
-                        "allowedToTop": false
                       }
                     ]
                   }
+                },
+                {
+                  "id": "645607b6b767ba8342cb87eb",
+                  "type": "",
+                  "target": "64560922b767ba8342cb881c",
+                  "data": {}
                 }
               ]
             }
@@ -3542,6 +3628,595 @@
           "coords": [
             38.616937717788296,
             -752.3902379194003
+          ]
+        },
+        "6455f41143bba062f9f19456": {
+          "type": "api",
+          "data": {
+            "name": "",
+            "url": "http://s1.ripple.com:51234/",
+            "body": [
+              {
+                "key": "",
+                "val": ""
+              }
+            ],
+            "params": [
+              {
+                "key": "",
+                "val": ""
+              }
+            ],
+            "method": "POST",
+            "headers": [
+              {
+                "key": "",
+                "val": ""
+              }
+            ],
+            "content": "{\n    \"method\": \"fee\",\n    \"params\": [{}]\n}",
+            "mappings": [
+              {
+                "path": "",
+                "var": null
+              }
+            ],
+            "bodyType": "rawInput",
+            "selectedAction": "Make a POST Request",
+            "selectedIntegration": "Custom API",
+            "portsV2": {
+              "byKey": {},
+              "builtIn": {
+                "next": {
+                  "type": "next",
+                  "target": "645607edb767ba8342cb87f6",
+                  "id": "6455f41143bba062f9f19458",
+                  "data": {}
+                },
+                "fail": {
+                  "type": "fail",
+                  "target": null,
+                  "id": "6455f41143bba062f9f19457"
+                }
+              },
+              "dynamic": []
+            }
+          },
+          "nodeID": "6455f41143bba062f9f19456"
+        },
+        "6455f41143bba062f9f1945a": {
+          "type": "block",
+          "data": {
+            "name": "Transaction Fees API",
+            "color": "",
+            "steps": [
+              "6455f41143bba062f9f19456"
+            ]
+          },
+          "nodeID": "6455f41143bba062f9f1945a",
+          "coords": [
+            1177.3902188745933,
+            -849.2590921613726
+          ]
+        },
+        "6455f60743bba062f9f19464": {
+          "type": "api",
+          "data": {
+            "name": "",
+            "url": "http://s1.ripple.com:51234/",
+            "body": [
+              {
+                "key": "",
+                "val": ""
+              }
+            ],
+            "params": [
+              {
+                "key": "",
+                "val": ""
+              }
+            ],
+            "method": "POST",
+            "headers": [
+              {
+                "key": "",
+                "val": ""
+              }
+            ],
+            "content": "{\n  \"TransactionType\": \"NFTokenMint\",\n  \"Account\": \"rvYAfWj5gh67oV6fW32ZzP3Aw4Eubs59B\",\n  \"TransferFee\": 0,\n  \"NFTokenTaxon\": 0,\n  \"Flags\": 8,\n  \"Fee\": \"0\",\n  \"URI\": \"697066733A2F2F62616679626569676479727A74357366703775646D37687537367568377932366E6634646675796C71616266336F636C67747179353566627A6469\",\n  \"Memos\": [\n        {\n            \"Memo\": {\n                \"MemoType\":\n                  \"687474703A2F2F6578616D706C652E636F6D2F6D656D6F2F67656E65726963\",\n                \"MemoData\": \"72656E74\"\n            }\n        }\n    ]\n}",
+            "mappings": [
+              {
+                "path": "",
+                "var": null
+              }
+            ],
+            "bodyType": "rawInput",
+            "selectedAction": "Make a POST Request",
+            "selectedIntegration": "Custom API",
+            "portsV2": {
+              "byKey": {},
+              "builtIn": {
+                "next": {
+                  "type": "next",
+                  "target": null,
+                  "id": "6455f60743bba062f9f19466"
+                },
+                "fail": {
+                  "type": "fail",
+                  "target": null,
+                  "id": "6455f60743bba062f9f19465"
+                }
+              },
+              "dynamic": []
+            }
+          },
+          "nodeID": "6455f60743bba062f9f19464"
+        },
+        "6455f60743bba062f9f19468": {
+          "type": "block",
+          "data": {
+            "name": "NFT Mint Test",
+            "color": "",
+            "steps": [
+              "6455f60743bba062f9f19464"
+            ]
+          },
+          "nodeID": "6455f60743bba062f9f19468",
+          "coords": [
+            764.9864025644745,
+            -1093.6486144135622
+          ]
+        },
+        "645607dcb767ba8342cb87ed": {
+          "type": "text",
+          "data": {
+            "name": "Text",
+            "texts": [
+              {
+                "id": "c0ae36c8",
+                "content": [
+                  {
+                    "children": [
+                      {
+                        "text": "Ripple Account Fetch Working"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "canvasVisibility": "preview",
+            "portsV2": {
+              "byKey": {},
+              "builtIn": {
+                "next": {
+                  "type": "next",
+                  "target": null,
+                  "id": "645607dcb767ba8342cb87ee"
+                }
+              },
+              "dynamic": []
+            }
+          },
+          "nodeID": "645607dcb767ba8342cb87ed",
+          "coords": [
+            0,
+            0
+          ]
+        },
+        "645607dcb767ba8342cb87ef": {
+          "type": "block",
+          "data": {
+            "name": "New Block 11",
+            "steps": [
+              "645607dcb767ba8342cb87ed"
+            ]
+          },
+          "nodeID": "645607dcb767ba8342cb87ef",
+          "coords": [
+            534.4276801442566,
+            564.9939988939939
+          ]
+        },
+        "645607edb767ba8342cb87f6": {
+          "type": "text",
+          "data": {
+            "name": "Text",
+            "texts": [
+              {
+                "id": "p9br36td",
+                "content": [
+                  {
+                    "children": [
+                      {
+                        "text": "Transaction Fee Working"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "canvasVisibility": "preview",
+            "portsV2": {
+              "byKey": {},
+              "builtIn": {
+                "next": {
+                  "type": "next",
+                  "target": null,
+                  "id": "645607edb767ba8342cb87f7"
+                }
+              },
+              "dynamic": []
+            }
+          },
+          "nodeID": "645607edb767ba8342cb87f6"
+        },
+        "645607edb767ba8342cb87f8": {
+          "type": "block",
+          "data": {
+            "name": "New Block 12",
+            "steps": [
+              "645607edb767ba8342cb87f6"
+            ]
+          },
+          "nodeID": "645607edb767ba8342cb87f8",
+          "coords": [
+            1596.8637937921046,
+            -815.3363849791945
+          ]
+        },
+        "645608b9b767ba8342cb8802": {
+          "type": "api",
+          "data": {
+            "name": "",
+            "url": "http://s1.ripple.com:51234/",
+            "body": [
+              {
+                "key": "",
+                "val": ""
+              }
+            ],
+            "params": [
+              {
+                "key": "",
+                "val": ""
+              }
+            ],
+            "method": "POST",
+            "headers": [
+              {
+                "key": "",
+                "val": ""
+              }
+            ],
+            "content": "{\n  \"method\": \"nft_buy_offers\",\n  \"params\": [{\n    \"nft_id\": \"{nft_id}\",\n    \"ledger_index\": \"validated\"\n  }]\n}",
+            "mappings": [
+              {
+                "path": "",
+                "var": null
+              }
+            ],
+            "bodyType": "rawInput",
+            "selectedAction": "Make a POST Request",
+            "selectedIntegration": "Custom API",
+            "portsV2": {
+              "byKey": {},
+              "builtIn": {
+                "next": {
+                  "type": "next",
+                  "target": "64560a65850b17c661724abf",
+                  "id": "645608b9b767ba8342cb8804",
+                  "data": {}
+                },
+                "fail": {
+                  "type": "fail",
+                  "target": null,
+                  "id": "645608b9b767ba8342cb8803"
+                }
+              },
+              "dynamic": []
+            }
+          },
+          "nodeID": "645608b9b767ba8342cb8802"
+        },
+        "645608b9b767ba8342cb8806": {
+          "type": "block",
+          "data": {
+            "name": "Buy Offer",
+            "color": "",
+            "steps": [
+              "645608b9b767ba8342cb8802"
+            ]
+          },
+          "nodeID": "645608b9b767ba8342cb8806",
+          "coords": [
+            1837.9542851018348,
+            -344.4907112159489
+          ]
+        },
+        "645608e9b767ba8342cb880d": {
+          "type": "buttons",
+          "data": {
+            "name": "Buttons",
+            "buttons": [
+              {
+                "id": "sij636vf",
+                "name": "Sell offers",
+                "actions": []
+              },
+              {
+                "id": "z1js36uf",
+                "name": "Buy Offers",
+                "actions": []
+              }
+            ],
+            "intentScope": "GLOBAL",
+            "portsV2": {
+              "byKey": {},
+              "builtIn": {
+                "else": {
+                  "type": "else",
+                  "target": null,
+                  "id": "645608e9b767ba8342cb880f"
+                }
+              },
+              "dynamic": [
+                {
+                  "type": "",
+                  "target": "6455f0708774ed67637b6fbc",
+                  "id": "645608e9b767ba8342cb880e",
+                  "data": {
+                    "points": [
+                      {
+                        "point": [
+                          1432.04,
+                          -439.13
+                        ]
+                      },
+                      {
+                        "point": [
+                          1561.3,
+                          -439.13
+                        ]
+                      },
+                      {
+                        "point": [
+                          1561.3,
+                          -625.63
+                        ]
+                      },
+                      {
+                        "point": [
+                          1690.57,
+                          -625.63
+                        ],
+                        "allowedToTop": true
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "645608f3b767ba8342cb8816",
+                  "type": "",
+                  "target": "645608b9b767ba8342cb8806",
+                  "data": {
+                    "points": [
+                      {
+                        "point": [
+                          1432.04,
+                          -384.63
+                        ]
+                      },
+                      {
+                        "point": [
+                          1552.49,
+                          -384.63
+                        ]
+                      },
+                      {
+                        "point": [
+                          1552.49,
+                          -317.49
+                        ]
+                      },
+                      {
+                        "point": [
+                          1672.95,
+                          -317.49
+                        ],
+                        "allowedToTop": true
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          "nodeID": "645608e9b767ba8342cb880d"
+        },
+        "645608e9b767ba8342cb8810": {
+          "type": "block",
+          "data": {
+            "name": "New Block 14",
+            "steps": [
+              "645608e9b767ba8342cb880d"
+            ]
+          },
+          "nodeID": "645608e9b767ba8342cb8810",
+          "coords": [
+            1266.0354205218946,
+            -518.8790638973393
+          ]
+        },
+        "64560922b767ba8342cb8819": {
+          "type": "captureV2",
+          "data": {
+            "name": "Capture",
+            "intentScope": "GLOBAL",
+            "capture": {
+              "type": "query",
+              "variable": "nft_id"
+            },
+            "portsV2": {
+              "byKey": {},
+              "builtIn": {
+                "next": {
+                  "type": "next",
+                  "target": "645608e9b767ba8342cb8810",
+                  "id": "64560922b767ba8342cb881a",
+                  "data": {}
+                },
+                "else": {
+                  "type": "else",
+                  "target": null,
+                  "id": "64560922b767ba8342cb881b"
+                }
+              },
+              "dynamic": []
+            }
+          },
+          "nodeID": "64560922b767ba8342cb8819"
+        },
+        "64560922b767ba8342cb881c": {
+          "type": "block",
+          "data": {
+            "name": "New Block 15",
+            "steps": [
+              "6456093ab767ba8342cb8823",
+              "64560922b767ba8342cb8819"
+            ]
+          },
+          "nodeID": "64560922b767ba8342cb881c",
+          "coords": [
+            719.9561318599499,
+            -417.968547197519
+          ]
+        },
+        "6456093ab767ba8342cb8823": {
+          "type": "text",
+          "data": {
+            "name": "Text",
+            "texts": [
+              {
+                "id": "wgn336na",
+                "content": [
+                  {
+                    "children": [
+                      {
+                        "text": "NFT ID (e.g. 000900008A0880C92F5C00F0027B16BF8E858CD0083ABDA60000099B00000000)"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "canvasVisibility": "preview",
+            "portsV2": {
+              "byKey": {},
+              "builtIn": {
+                "next": {
+                  "type": "next",
+                  "target": null,
+                  "id": "6456093ab767ba8342cb8824"
+                }
+              },
+              "dynamic": []
+            }
+          },
+          "nodeID": "6456093ab767ba8342cb8823"
+        },
+        "64560a5d850b17c661724ab6": {
+          "type": "text",
+          "data": {
+            "name": "Text",
+            "texts": [
+              {
+                "id": "ko7736os",
+                "content": [
+                  {
+                    "children": [
+                      {
+                        "text": "Sell Offer Fetch Working"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "canvasVisibility": "preview",
+            "portsV2": {
+              "byKey": {},
+              "builtIn": {
+                "next": {
+                  "type": "next",
+                  "target": null,
+                  "id": "64560a5d850b17c661724ab7"
+                }
+              },
+              "dynamic": []
+            }
+          },
+          "nodeID": "64560a5d850b17c661724ab6"
+        },
+        "64560a5d850b17c661724ab8": {
+          "type": "block",
+          "data": {
+            "name": "New Block 16",
+            "steps": [
+              "64560a5d850b17c661724ab6"
+            ]
+          },
+          "nodeID": "64560a5d850b17c661724ab8",
+          "coords": [
+            2689.9310264714277,
+            -659.7790843178816
+          ]
+        },
+        "64560a65850b17c661724abf": {
+          "type": "text",
+          "data": {
+            "name": "Text",
+            "texts": [
+              {
+                "id": "qy82367r",
+                "content": [
+                  {
+                    "children": [
+                      {
+                        "text": "Buy Offer Fetch Working"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "canvasVisibility": "preview",
+            "portsV2": {
+              "byKey": {},
+              "builtIn": {
+                "next": {
+                  "type": "next",
+                  "target": null,
+                  "id": "64560a65850b17c661724ac0"
+                }
+              },
+              "dynamic": []
+            }
+          },
+          "nodeID": "64560a65850b17c661724abf"
+        },
+        "64560a65850b17c661724ac1": {
+          "type": "block",
+          "data": {
+            "name": "New Block 17",
+            "steps": [
+              "64560a65850b17c661724abf"
+            ]
+          },
+          "nodeID": "64560a65850b17c661724ac1",
+          "coords": [
+            3061.860525174371,
+            -392.3625013786936
           ]
         }
       }
