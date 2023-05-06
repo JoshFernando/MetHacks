@@ -19,7 +19,7 @@
       "generateNoMatch": true
     },
     "_version": 1.2,
-    "updatedAt": "2023-05-06T08:05:49.639Z",
+    "updatedAt": "2023-05-06T16:24:51.446Z",
     "creatorID": 130972,
     "updatedBy": 130972,
     "apiPrivacy": "private",
@@ -34,7 +34,11 @@
       "platform",
       "locale",
       "rippleWalletAddress",
-      "nft_id"
+      "nft_id",
+      "feeObject",
+      "fee",
+      "currentLedgerSize",
+      "ledgerCurrentIndex"
     ],
     "platformData": {
       "slots": [],
@@ -71,7 +75,7 @@
           "6455ebbf46851d8e9700eb42"
         ],
         "rootDiagramID": "6455ebbf46851d8e9700eb42",
-        "updatedAt": "2023-05-06T08:05:49.640Z",
+        "updatedAt": "2023-05-06T16:24:51.448Z",
         "updatedBy": 130972
       }
     ],
@@ -2727,37 +2731,37 @@
                     "points": [
                       {
                         "point": [
-                          -180.23,
+                          -180.24,
                           -450.08
                         ]
                       },
                       {
                         "point": [
-                          -156.23,
+                          -156.24,
                           -450.08
                         ]
                       },
                       {
                         "point": [
-                          -156.23,
-                          -736.3
+                          -156.24,
+                          -736.31
                         ]
                       },
                       {
                         "point": [
-                          -283.47,
-                          -736.3
+                          -283.48,
+                          -736.31
                         ]
                       },
                       {
                         "point": [
-                          -283.47,
+                          -283.48,
                           -1022.53
                         ]
                       },
                       {
                         "point": [
-                          -259.47,
+                          -259.48,
                           -1022.53
                         ],
                         "allowedToTop": true
@@ -3262,26 +3266,26 @@
                     "points": [
                       {
                         "point": [
-                          71.52,
-                          -915.28
+                          71.65,
+                          -915.43
                         ]
                       },
                       {
                         "point": [
                           340.11,
-                          -915.28
+                          -915.43
                         ]
                       },
                       {
                         "point": [
                           340.11,
-                          -585.27
+                          -585.4
                         ]
                       },
                       {
                         "point": [
-                          608.69,
-                          -585.27
+                          608.56,
+                          -585.4
                         ],
                         "allowedToTop": false
                       }
@@ -3424,26 +3428,26 @@
                     "points": [
                       {
                         "point": [
-                          940.69,
-                          -585.02
+                          940.81,
+                          -585.16
                         ]
                       },
                       {
                         "point": [
                           976.04,
-                          -585.02
+                          -585.16
                         ]
                       },
                       {
                         "point": [
                           976.04,
-                          -769.76
+                          -769.9
                         ]
                       },
                       {
                         "point": [
-                          1011.39,
-                          -769.76
+                          1011.27,
+                          -769.9
                         ],
                         "allowedToTop": false
                       }
@@ -3453,7 +3457,11 @@
               ]
             }
           },
-          "nodeID": "6455f1998774ed67637b6fc3"
+          "nodeID": "6455f1998774ed67637b6fc3",
+          "coords": [
+            0,
+            0
+          ]
         },
         "6455f1998774ed67637b6fc6": {
           "type": "block",
@@ -3591,14 +3599,14 @@
                     "points": [
                       {
                         "point": [
-                          204.62,
-                          -584.39
+                          204.74,
+                          -584.54
                         ]
                       },
                       {
                         "point": [
-                          608.69,
-                          -585.27
+                          608.56,
+                          -585.4
                         ]
                       }
                     ]
@@ -3657,8 +3665,16 @@
             "content": "{\n    \"method\": \"fee\",\n    \"params\": [{}]\n}",
             "mappings": [
               {
-                "path": "",
-                "var": null
+                "path": "result",
+                "var": "feeObject"
+              },
+              {
+                "path": "result.current_ledger_size",
+                "var": "currentLedgerSize"
+              },
+              {
+                "path": "result.ledger_current_index",
+                "var": "ledgerCurrentIndex"
               }
             ],
             "bodyType": "rawInput",
@@ -3671,7 +3687,35 @@
                   "type": "next",
                   "target": "645607edb767ba8342cb87f6",
                   "id": "6455f41143bba062f9f19458",
-                  "data": {}
+                  "data": {
+                    "points": [
+                      {
+                        "point": [
+                          1343.52,
+                          -695.67
+                        ]
+                      },
+                      {
+                        "point": [
+                          1448.44,
+                          -695.67
+                        ]
+                      },
+                      {
+                        "point": [
+                          1448.44,
+                          -967.55
+                        ]
+                      },
+                      {
+                        "point": [
+                          1553.36,
+                          -967.55
+                        ],
+                        "allowedToTop": false
+                      }
+                    ]
+                  }
                 },
                 "fail": {
                   "type": "fail",
@@ -3763,8 +3807,8 @@
           },
           "nodeID": "6455f60743bba062f9f19468",
           "coords": [
-            764.9864025644745,
-            -1093.6486144135622
+            478.7895455388666,
+            -1359.4028387944838
           ]
         },
         "645607dcb767ba8342cb87ed": {
@@ -3829,7 +3873,70 @@
                   {
                     "children": [
                       {
-                        "text": "Transaction Fee Working"
+                        "text": "Find Transaction Fees Information below!"
+                      }
+                    ]
+                  },
+                  {
+                    "children": [
+                      {
+                        "text": ""
+                      }
+                    ]
+                  },
+                  {
+                    "children": [
+                      {
+                        "text": "Base Fee: 10 Drops"
+                      }
+                    ]
+                  },
+                  {
+                    "children": [
+                      {
+                        "text": "Median Fee: 5000 Drops"
+                      }
+                    ]
+                  },
+                  {
+                    "children": [
+                      {
+                        "text": "Current Ledger Size: "
+                      },
+                      {
+                        "id": "currentLedgerSize",
+                        "name": "currentLedgerSize",
+                        "isSlot": false,
+                        "type": "variable",
+                        "children": [
+                          {
+                            "text": ""
+                          }
+                        ]
+                      },
+                      {
+                        "text": " "
+                      }
+                    ]
+                  },
+                  {
+                    "children": [
+                      {
+                        "text": "Current Ledger Index: "
+                      },
+                      {
+                        "id": "ledgerCurrentIndex",
+                        "name": "ledgerCurrentIndex",
+                        "isSlot": false,
+                        "type": "variable",
+                        "children": [
+                          {
+                            "text": ""
+                          }
+                        ]
+                      },
+                      {
+                        "text": " "
                       }
                     ]
                   }
@@ -3842,14 +3949,19 @@
               "builtIn": {
                 "next": {
                   "type": "next",
-                  "target": null,
-                  "id": "645607edb767ba8342cb87f7"
+                  "target": "6455f1998774ed67637b6fc6",
+                  "id": "645607edb767ba8342cb87f7",
+                  "data": {}
                 }
               },
               "dynamic": []
             }
           },
-          "nodeID": "645607edb767ba8342cb87f6"
+          "nodeID": "645607edb767ba8342cb87f6",
+          "coords": [
+            0,
+            0
+          ]
         },
         "645607edb767ba8342cb87f8": {
           "type": "block",
@@ -3861,8 +3973,8 @@
           },
           "nodeID": "645607edb767ba8342cb87f8",
           "coords": [
-            1596.8637937921046,
-            -815.3363849791945
+            1719.4830665266425,
+            -1046.9135355397348
           ]
         },
         "645608b9b767ba8342cb8802": {
