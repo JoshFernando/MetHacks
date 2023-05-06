@@ -19,7 +19,7 @@
       "generateNoMatch": true
     },
     "_version": 1.2,
-    "updatedAt": "2023-05-06T06:06:50.072Z",
+    "updatedAt": "2023-05-06T06:26:50.441Z",
     "creatorID": 130972,
     "updatedBy": 130972,
     "apiPrivacy": "private",
@@ -70,7 +70,7 @@
           "6455ebbf46851d8e9700eb42"
         ],
         "rootDiagramID": "6455ebbf46851d8e9700eb42",
-        "updatedAt": "2023-05-06T06:06:30.594Z",
+        "updatedAt": "2023-05-06T06:26:50.442Z",
         "updatedBy": 130972
       }
     ],
@@ -2708,8 +2708,8 @@
           "nodeID": "start00000000000000000000",
           "type": "start",
           "coords": [
-            166,
-            -144
+            -244.86309521712593,
+            -472.07802471210687
           ],
           "data": {
             "name": "Start",
@@ -2720,21 +2720,46 @@
               "builtIn": {
                 "next": {
                   "type": "next",
-                  "target": "6438720682cf9d2273b904ed",
+                  "target": "6455f0588774ed67637b6faf",
                   "id": "6032afcf359e8c14c06c0319",
                   "data": {
                     "points": [
                       {
                         "point": [
-                          230.64,
-                          -122
+                          -180.23,
+                          -450.08
                         ]
                       },
                       {
                         "point": [
-                          315.97,
-                          -120.65
+                          -156.23,
+                          -450.08
                         ]
+                      },
+                      {
+                        "point": [
+                          -156.23,
+                          -736.3
+                        ]
+                      },
+                      {
+                        "point": [
+                          -283.47,
+                          -736.3
+                        ]
+                      },
+                      {
+                        "point": [
+                          -283.47,
+                          -1022.53
+                        ]
+                      },
+                      {
+                        "point": [
+                          -259.47,
+                          -1022.53
+                        ],
+                        "allowedToTop": true
                       }
                     ]
                   }
@@ -2788,8 +2813,8 @@
           },
           "nodeID": "6438720682cf9d2273b904ef",
           "coords": [
-            909.4936639306172,
-            306.7373685570385
+            1259.3912451970896,
+            182.11631221555524
           ]
         },
         "6438720682cf9d2273b904f1": {
@@ -2883,31 +2908,31 @@
                       {
                         "point": [
                           646.97,
-                          3.85
+                          71.35
                         ]
                       },
                       {
                         "point": [
                           670.97,
-                          3.85
+                          71.35
                         ]
                       },
                       {
                         "point": [
                           670.97,
-                          189.24
+                          145.85
                         ]
                       },
                       {
                         "point": [
-                          488.18,
-                          189.24
+                          486.55,
+                          145.85
                         ]
                       },
                       {
                         "point": [
-                          488.18,
-                          374.64
+                          486.55,
+                          171.9
                         ],
                         "toTop": true,
                         "allowedToTop": true
@@ -2946,28 +2971,41 @@
                     "points": [
                       {
                         "point": [
-                          743.49,
-                          408.99
+                          1093.39,
+                          284.37
                         ],
                         "reversed": true
                       },
                       {
                         "point": [
-                          703.63,
-                          408.99
+                          1069.39,
+                          284.37
                         ]
                       },
                       {
                         "point": [
-                          703.63,
+                          1069.39,
+                          81.68
+                        ]
+                      },
+                      {
+                        "point": [
+                          1081.63,
+                          81.68
+                        ]
+                      },
+                      {
+                        "point": [
+                          1081.63,
                           -121
                         ]
                       },
                       {
                         "point": [
-                          727.63,
+                          1057.63,
                           -121
                         ],
+                        "reversed": true,
                         "allowedToTop": true
                       }
                     ]
@@ -3046,7 +3084,12 @@
               }
             ],
             "content": "{\n    \"method\": \"account_info\",\n    \"params\": [\n        {\n            \"account\": \"{rippleWalletAddress}\",\n            \"strict\": true,\n            \"ledger_index\": \"current\",\n            \"queue\": true\n        }\n    ]\n}",
-            "mappings": [],
+            "mappings": [
+              {
+                "path": "",
+                "var": null
+              }
+            ],
             "bodyType": "rawInput",
             "selectedAction": "Make a POST Request",
             "selectedIntegration": "Custom API",
@@ -3079,52 +3122,426 @@
           },
           "nodeID": "6455ebf18774ed67637b6f92",
           "coords": [
-            488.181606139756,
-            374.6390833717925
+            486.546621806224,
+            171.90102601382114
           ]
         },
-        "6455edb48774ed67637b6f9a": {
-          "type": "ai_set",
+        "6455f0588774ed67637b6fac": {
+          "type": "buttons",
           "data": {
-            "name": "AI Set",
-            "label": "",
-            "sets": [
+            "name": "Buttons",
+            "buttons": [
               {
-                "mode": "prompt",
-                "prompt": "",
-                "variable": null
+                "id": "lz10w36zv",
+                "name": "Account",
+                "actions": []
+              },
+              {
+                "id": "1z11e3619",
+                "name": "Transactions",
+                "actions": []
               }
             ],
-            "system": "",
-            "maxTokens": 128,
-            "model": "gpt-3.5-turbo",
-            "temperature": 0.7,
+            "intentScope": "GLOBAL",
+            "portsV2": {
+              "byKey": {},
+              "builtIn": {
+                "else": {
+                  "id": "6455f1f68774ed67637b6fd8",
+                  "type": "else",
+                  "target": "6455f2568774ed67637b6ff4",
+                  "data": {
+                    "points": [
+                      {
+                        "point": [
+                          57.82,
+                          -893.79
+                        ]
+                      },
+                      {
+                        "point": [
+                          214.91,
+                          -893.79
+                        ]
+                      },
+                      {
+                        "point": [
+                          214.91,
+                          -705.9
+                        ]
+                      },
+                      {
+                        "point": [
+                          190.91,
+                          -705.9
+                        ],
+                        "reversed": true,
+                        "allowedToTop": false
+                      }
+                    ]
+                  }
+                }
+              },
+              "dynamic": [
+                {
+                  "type": "",
+                  "target": "6438720682cf9d2273b904ed",
+                  "id": "6455f0588774ed67637b6fad",
+                  "data": {
+                    "points": [
+                      {
+                        "point": [
+                          71.53,
+                          -969.78
+                        ]
+                      },
+                      {
+                        "point": [
+                          193.75,
+                          -969.78
+                        ]
+                      },
+                      {
+                        "point": [
+                          193.75,
+                          -120.65
+                        ]
+                      },
+                      {
+                        "point": [
+                          315.97,
+                          -120.65
+                        ],
+                        "allowedToTop": true
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "6455f05f8774ed67637b6fb4",
+                  "type": "",
+                  "target": "6455f1998774ed67637b6fc3",
+                  "data": {
+                    "points": [
+                      {
+                        "point": [
+                          71.52,
+                          -915.28
+                        ]
+                      },
+                      {
+                        "point": [
+                          374.61,
+                          -915.28
+                        ]
+                      },
+                      {
+                        "point": [
+                          374.61,
+                          -403.32
+                        ]
+                      },
+                      {
+                        "point": [
+                          677.7,
+                          -403.32
+                        ],
+                        "allowedToTop": false
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "noMatch": {
+              "types": [
+                "path"
+              ],
+              "pathName": "No match",
+              "randomize": false,
+              "reprompts": []
+            }
+          },
+          "nodeID": "6455f0588774ed67637b6fac",
+          "coords": [
+            0,
+            0
+          ]
+        },
+        "6455f0588774ed67637b6faf": {
+          "type": "block",
+          "data": {
+            "name": "New Block 6",
+            "steps": [
+              "6455f0588774ed67637b6fac"
+            ]
+          },
+          "nodeID": "6455f0588774ed67637b6faf",
+          "coords": [
+            -94.47508800223056,
+            -1049.5304177359913
+          ]
+        },
+        "6455f0708774ed67637b6fb9": {
+          "type": "api",
+          "data": {
+            "name": "",
+            "url": "http://s1.ripple.com:51234/",
+            "body": [
+              {
+                "key": "",
+                "val": ""
+              }
+            ],
+            "params": [
+              {
+                "key": "",
+                "val": ""
+              }
+            ],
+            "method": "POST",
+            "headers": [
+              {
+                "key": "",
+                "val": ""
+              }
+            ],
+            "content": "{\n    \"method\": \"fee\",\n    \"params\": [{}]\n}",
+            "mappings": [
+              {
+                "path": "",
+                "var": null
+              }
+            ],
+            "bodyType": "rawInput",
+            "selectedAction": "Make a POST Request",
+            "selectedIntegration": "Custom API",
             "portsV2": {
               "byKey": {},
               "builtIn": {
                 "next": {
                   "type": "next",
                   "target": null,
-                  "id": "6455edb48774ed67637b6f9b"
+                  "id": "6455f0708774ed67637b6fba"
+                },
+                "fail": {
+                  "type": "fail",
+                  "target": null,
+                  "id": "6455f0708774ed67637b6fbb"
                 }
               },
               "dynamic": []
             }
           },
-          "nodeID": "6455edb48774ed67637b6f9a"
+          "nodeID": "6455f0708774ed67637b6fb9"
         },
-        "6455edb48774ed67637b6f9c": {
+        "6455f0708774ed67637b6fbc": {
           "type": "block",
           "data": {
-            "name": "New Block 5",
+            "name": "New Block 7",
             "steps": [
-              "6455edb48774ed67637b6f9a"
+              "6455f0708774ed67637b6fb9"
             ]
           },
-          "nodeID": "6455edb48774ed67637b6f9c",
+          "nodeID": "6455f0708774ed67637b6fbc",
           "coords": [
-            231.93102944693715,
-            548.8224819080876
+            1385.6885001169494,
+            -485.21177912312226
+          ]
+        },
+        "6455f1998774ed67637b6fc3": {
+          "type": "buttons",
+          "data": {
+            "name": "Buttons",
+            "buttons": [
+              {
+                "id": "r116736yp",
+                "name": "Transaction Fees",
+                "actions": []
+              }
+            ],
+            "intentScope": "GLOBAL",
+            "portsV2": {
+              "byKey": {},
+              "builtIn": {
+                "else": {
+                  "type": "else",
+                  "target": null,
+                  "id": "6455f1998774ed67637b6fc5"
+                }
+              },
+              "dynamic": [
+                {
+                  "type": "",
+                  "target": "6455f0708774ed67637b6fb9",
+                  "id": "6455f1998774ed67637b6fc4",
+                  "data": {}
+                }
+              ]
+            }
+          },
+          "nodeID": "6455f1998774ed67637b6fc3"
+        },
+        "6455f1998774ed67637b6fc6": {
+          "type": "block",
+          "data": {
+            "name": "New Block 8",
+            "steps": [
+              "6455f1998774ed67637b6fc3"
+            ]
+          },
+          "nodeID": "6455f1998774ed67637b6fc6",
+          "coords": [
+            843.7036612566118,
+            -482.81522034732484
+          ]
+        },
+        "6455f2568774ed67637b6ff4": {
+          "type": "ifV2",
+          "data": {
+            "name": "If",
+            "expressions": [
+              {
+                "type": null,
+                "name": "",
+                "value": [
+                  {
+                    "logicInterface": "variable",
+                    "type": "contains",
+                    "value": [
+                      {
+                        "type": "variable",
+                        "value": "last_utterance"
+                      },
+                      {
+                        "type": "value",
+                        "value": "account"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": null,
+                "name": "",
+                "value": [
+                  {
+                    "logicInterface": "variable",
+                    "type": "contains",
+                    "value": [
+                      {
+                        "type": "variable",
+                        "value": "last_utterance"
+                      },
+                      {
+                        "type": "value",
+                        "value": "transaction"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "noMatch": {
+              "type": "none",
+              "pathName": "No match"
+            },
+            "portsV2": {
+              "byKey": {},
+              "builtIn": {
+                "else": {
+                  "type": "else",
+                  "target": null,
+                  "id": "6455f2568774ed67637b6ff6"
+                }
+              },
+              "dynamic": [
+                {
+                  "type": "",
+                  "target": "6438720682cf9d2273b904ed",
+                  "id": "6455f2568774ed67637b6ff5",
+                  "data": {
+                    "points": [
+                      {
+                        "point": [
+                          204.62,
+                          -661.39
+                        ]
+                      },
+                      {
+                        "point": [
+                          260.3,
+                          -661.39
+                        ]
+                      },
+                      {
+                        "point": [
+                          260.3,
+                          -120.65
+                        ]
+                      },
+                      {
+                        "point": [
+                          315.97,
+                          -120.65
+                        ],
+                        "allowedToTop": true
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "6455f2b88774ed67637b7035",
+                  "type": "",
+                  "target": "6455f1998774ed67637b6fc3",
+                  "data": {
+                    "points": [
+                      {
+                        "point": [
+                          204.62,
+                          -584.39
+                        ]
+                      },
+                      {
+                        "point": [
+                          441.16,
+                          -584.39
+                        ]
+                      },
+                      {
+                        "point": [
+                          441.16,
+                          -403.32
+                        ]
+                      },
+                      {
+                        "point": [
+                          677.7,
+                          -403.32
+                        ],
+                        "allowedToTop": false
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          "nodeID": "6455f2568774ed67637b6ff4"
+        },
+        "6455f2568774ed67637b6ff7": {
+          "type": "block",
+          "data": {
+            "name": "New Block 9",
+            "steps": [
+              "6455f2568774ed67637b6ff4"
+            ],
+            "color": ""
+          },
+          "nodeID": "6455f2568774ed67637b6ff7",
+          "coords": [
+            38.616937717788296,
+            -752.3902379194003
           ]
         }
       }
