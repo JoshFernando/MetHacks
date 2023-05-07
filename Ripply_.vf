@@ -19,7 +19,7 @@
       "generateNoMatch": true
     },
     "_version": 1.2,
-    "updatedAt": "2023-05-06T16:24:51.446Z",
+    "updatedAt": "2023-05-07T02:53:48.692Z",
     "creatorID": 130972,
     "updatedBy": 130972,
     "apiPrivacy": "private",
@@ -38,7 +38,16 @@
       "feeObject",
       "fee",
       "currentLedgerSize",
-      "ledgerCurrentIndex"
+      "ledgerCurrentIndex",
+      "transactionCurrency",
+      "transactionAmount",
+      "transactionDestinationName",
+      "transactionDestinationAddress",
+      "transa",
+      "transactionRippleAmount",
+      "transaction",
+      "transactionExchangeRate",
+      "content"
     ],
     "platformData": {
       "slots": [],
@@ -75,7 +84,7 @@
           "6455ebbf46851d8e9700eb42"
         ],
         "rootDiagramID": "6455ebbf46851d8e9700eb42",
-        "updatedAt": "2023-05-06T16:24:51.448Z",
+        "updatedAt": "2023-05-07T02:53:48.693Z",
         "updatedBy": 130972
       }
     ],
@@ -3407,6 +3416,11 @@
                 "id": "r116736yp",
                 "name": "Transaction Fees",
                 "actions": []
+              },
+              {
+                "id": "o21h136vp",
+                "name": "Make a Transaction",
+                "actions": []
               }
             ],
             "intentScope": "GLOBAL",
@@ -3448,6 +3462,41 @@
                         "point": [
                           1011.27,
                           -769.9
+                        ],
+                        "allowedToTop": false
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "645702c0577ed62c8a6be595",
+                  "type": "",
+                  "target": "6457048d577ed62c8a6be5c0",
+                  "data": {
+                    "points": [
+                      {
+                        "point": [
+                          608.56,
+                          -530.67
+                        ],
+                        "reversed": true
+                      },
+                      {
+                        "point": [
+                          562.59,
+                          -530.67
+                        ]
+                      },
+                      {
+                        "point": [
+                          562.59,
+                          -798.6
+                        ]
+                      },
+                      {
+                        "point": [
+                          586.59,
+                          -798.6
                         ],
                         "allowedToTop": false
                       }
@@ -4329,6 +4378,902 @@
           "coords": [
             3061.860525174371,
             -392.3625013786936
+          ]
+        },
+        "645702cd577ed62c8a6be599": {
+          "type": "block",
+          "data": {
+            "name": "New Block 18",
+            "steps": [
+              "645702f7577ed62c8a6be5a0"
+            ]
+          },
+          "nodeID": "645702cd577ed62c8a6be599",
+          "coords": [
+            878.0404826289117,
+            -1333.7121457592905
+          ]
+        },
+        "645702f7577ed62c8a6be5a0": {
+          "type": "ai_set",
+          "data": {
+            "name": "AI Set",
+            "label": "Extract information from transaction",
+            "sets": [
+              {
+                "mode": "prompt",
+                "prompt": "Extract the currency from {{[last_utterance].last_utterance}}. Return the currency in the ISO 4217 three-letter code format.",
+                "variable": "transactionCurrency"
+              },
+              {
+                "prompt": "Extract the dollar amount from {{[last_utterance].last_utterance}}. Return solely the amount as a number",
+                "variable": "transactionAmount",
+                "mode": "prompt"
+              },
+              {
+                "prompt": "Extract the destination user name from {{[last_utterance].last_utterance}}. Return the solely destination user name by itself",
+                "variable": "transactionDestinationName",
+                "mode": "prompt"
+              },
+              {
+                "prompt": "Extract the destination wallet address (a sequence of numbers and letters, and a ripple address always begins with an ‘r’) from {{[last_utterance].last_utterance}}. Return the wallet address",
+                "variable": "transactionDestinationAddress",
+                "mode": "prompt"
+              }
+            ],
+            "system": "",
+            "maxTokens": 128,
+            "model": "gpt-3.5-turbo",
+            "temperature": 0.7,
+            "portsV2": {
+              "byKey": {},
+              "builtIn": {
+                "next": {
+                  "type": "next",
+                  "target": "64570781577ed62c8a6be5d0",
+                  "id": "645702f7577ed62c8a6be5a1",
+                  "data": {}
+                }
+              },
+              "dynamic": []
+            }
+          },
+          "nodeID": "645702f7577ed62c8a6be5a0"
+        },
+        "6457041d577ed62c8a6be5a6": {
+          "type": "text",
+          "data": {
+            "name": "Text",
+            "texts": [
+              {
+                "id": "xn1r436nm",
+                "content": [
+                  {
+                    "children": [
+                      {
+                        "text": "Making a transaction to..."
+                      }
+                    ]
+                  },
+                  {
+                    "children": [
+                      {
+                        "text": ""
+                      }
+                    ]
+                  },
+                  {
+                    "children": [
+                      {
+                        "text": "Destination Name: "
+                      },
+                      {
+                        "id": "transactionDestinationName",
+                        "name": "transactionDestinationName",
+                        "isSlot": false,
+                        "type": "variable",
+                        "children": [
+                          {
+                            "text": ""
+                          }
+                        ]
+                      },
+                      {
+                        "text": " "
+                      }
+                    ]
+                  },
+                  {
+                    "children": [
+                      {
+                        "text": "Destination Address: "
+                      },
+                      {
+                        "id": "transactionDestinationAddress",
+                        "name": "transactionDestinationAddress",
+                        "isSlot": false,
+                        "type": "variable",
+                        "children": [
+                          {
+                            "text": ""
+                          }
+                        ]
+                      },
+                      {
+                        "text": " "
+                      }
+                    ]
+                  },
+                  {
+                    "children": [
+                      {
+                        "text": "Amount: $"
+                      },
+                      {
+                        "id": "transactionAmount",
+                        "name": "transactionAmount",
+                        "isSlot": false,
+                        "type": "variable",
+                        "children": [
+                          {
+                            "text": ""
+                          }
+                        ]
+                      },
+                      {
+                        "text": " "
+                      }
+                    ]
+                  },
+                  {
+                    "children": [
+                      {
+                        "text": "Currency: "
+                      },
+                      {
+                        "id": "transactionCurrency",
+                        "name": "transactionCurrency",
+                        "isSlot": false,
+                        "type": "variable",
+                        "children": [
+                          {
+                            "text": ""
+                          }
+                        ]
+                      },
+                      {
+                        "text": " "
+                      }
+                    ]
+                  },
+                  {
+                    "children": [
+                      {
+                        "text": "Exchange Rate: "
+                      },
+                      {
+                        "id": "transactionExchangeRate",
+                        "name": "transactionExchangeRate",
+                        "isSlot": false,
+                        "type": "variable",
+                        "children": [
+                          {
+                            "text": ""
+                          }
+                        ]
+                      },
+                      {
+                        "text": " "
+                      },
+                      {
+                        "id": "transactionCurrency",
+                        "name": "transactionCurrency",
+                        "isSlot": false,
+                        "type": "variable",
+                        "children": [
+                          {
+                            "text": ""
+                          }
+                        ]
+                      },
+                      {
+                        "text": " / XRP"
+                      }
+                    ]
+                  },
+                  {
+                    "children": [
+                      {
+                        "text": "Ripple Amount: "
+                      },
+                      {
+                        "id": "transactionRippleAmount",
+                        "name": "transactionRippleAmount",
+                        "type": "variable",
+                        "children": [
+                          {
+                            "text": ""
+                          }
+                        ]
+                      },
+                      {
+                        "text": " "
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "canvasVisibility": "preview",
+            "portsV2": {
+              "byKey": {},
+              "builtIn": {
+                "next": {
+                  "type": "next",
+                  "target": null,
+                  "id": "6457041d577ed62c8a6be5a7"
+                }
+              },
+              "dynamic": []
+            }
+          },
+          "nodeID": "6457041d577ed62c8a6be5a6"
+        },
+        "6457041d577ed62c8a6be5a8": {
+          "type": "block",
+          "data": {
+            "name": "New Block 19",
+            "steps": [
+              "6457041d577ed62c8a6be5a6"
+            ]
+          },
+          "nodeID": "6457041d577ed62c8a6be5a8",
+          "coords": [
+            1393.9633031387068,
+            -1246.2159908447486
+          ]
+        },
+        "6457047f577ed62c8a6be5b1": {
+          "type": "captureV2",
+          "data": {
+            "name": "Capture",
+            "intentScope": "GLOBAL",
+            "capture": {
+              "type": "query",
+              "variable": "last_utterance"
+            },
+            "noReply": null,
+            "noMatch": null,
+            "portsV2": {
+              "byKey": {},
+              "builtIn": {
+                "next": {
+                  "type": "next",
+                  "target": "645702f7577ed62c8a6be5a0",
+                  "id": "6457047f577ed62c8a6be5b2",
+                  "data": {
+                    "points": [
+                      {
+                        "point": [
+                          945.09,
+                          -963.36
+                        ]
+                      },
+                      {
+                        "point": [
+                          1068.17,
+                          -963.36
+                        ]
+                      },
+                      {
+                        "point": [
+                          1068.17,
+                          -1254.35
+                        ]
+                      },
+                      {
+                        "point": [
+                          1044.17,
+                          -1254.35
+                        ],
+                        "reversed": true,
+                        "allowedToTop": false
+                      }
+                    ]
+                  }
+                },
+                "else": {
+                  "type": "else",
+                  "target": null,
+                  "id": "6457047f577ed62c8a6be5b3"
+                }
+              },
+              "dynamic": []
+            }
+          },
+          "nodeID": "6457047f577ed62c8a6be5b1",
+          "coords": [
+            0,
+            0
+          ]
+        },
+        "6457047f577ed62c8a6be5b4": {
+          "type": "block",
+          "data": {
+            "name": "New Block 20",
+            "steps": [
+              "6457048d577ed62c8a6be5c0"
+            ]
+          },
+          "nodeID": "6457047f577ed62c8a6be5b4",
+          "coords": [
+            752.7133031387067,
+            -877.9611080322486
+          ]
+        },
+        "6457048d577ed62c8a6be5c0": {
+          "type": "text",
+          "data": {
+            "name": "Text",
+            "texts": [
+              {
+                "id": "p21zd36av",
+                "content": [
+                  {
+                    "children": [
+                      {
+                        "text": "What transaction do you want to make? (E.g. Please send $3 CAD to my friend Matt with wallet address rU2mYYRG2jDEYVNjSZVuPdjrJ7QxDuQEHi) "
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "canvasVisibility": "preview",
+            "portsV2": {
+              "byKey": {},
+              "builtIn": {
+                "next": {
+                  "type": "next",
+                  "target": "6457047f577ed62c8a6be5b1",
+                  "id": "6457048d577ed62c8a6be5c1",
+                  "data": {
+                    "points": [
+                      {
+                        "point": [
+                          918.84,
+                          -753.36
+                        ]
+                      },
+                      {
+                        "point": [
+                          969.09,
+                          -753.36
+                        ]
+                      },
+                      {
+                        "point": [
+                          969.09,
+                          -974.85
+                        ]
+                      },
+                      {
+                        "point": [
+                          945.09,
+                          -974.85
+                        ],
+                        "reversed": true,
+                        "allowedToTop": false
+                      }
+                    ]
+                  }
+                }
+              },
+              "dynamic": []
+            }
+          },
+          "nodeID": "6457048d577ed62c8a6be5c0"
+        },
+        "645706eb577ed62c8a6be5c5": {
+          "type": "block",
+          "data": {
+            "name": "New Block 21",
+            "steps": [
+              "6457047f577ed62c8a6be5b1"
+            ]
+          },
+          "nodeID": "645706eb577ed62c8a6be5c5",
+          "coords": [
+            778.9633031387067,
+            -1054.2111080322486
+          ]
+        },
+        "64570781577ed62c8a6be5d0": {
+          "type": "ifV2",
+          "data": {
+            "name": "If",
+            "expressions": [
+              {
+                "type": null,
+                "name": "",
+                "value": [
+                  {
+                    "logicInterface": "variable",
+                    "type": "equals",
+                    "value": [
+                      {
+                        "type": "variable",
+                        "value": "transactionCurrency"
+                      },
+                      {
+                        "type": "value",
+                        "value": "CAD"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": null,
+                "name": "",
+                "value": [
+                  {
+                    "logicInterface": "variable",
+                    "type": "equals",
+                    "value": [
+                      {
+                        "type": "variable",
+                        "value": "transactionCurrency"
+                      },
+                      {
+                        "type": "value",
+                        "value": "USD"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "noMatch": {
+              "type": "path",
+              "pathName": "Else"
+            },
+            "portsV2": {
+              "byKey": {},
+              "builtIn": {
+                "else": {
+                  "id": "64570934577ed62c8a6be61c",
+                  "type": "else",
+                  "target": "64570937577ed62c8a6be61f",
+                  "data": {}
+                }
+              },
+              "dynamic": [
+                {
+                  "type": "",
+                  "target": "6457079a577ed62c8a6be5db",
+                  "id": "64570781577ed62c8a6be5d1",
+                  "data": {}
+                },
+                {
+                  "id": "64570908577ed62c8a6be612",
+                  "type": "",
+                  "target": "64570919577ed62c8a6be615",
+                  "data": {}
+                }
+              ]
+            }
+          },
+          "nodeID": "64570781577ed62c8a6be5d0",
+          "coords": [
+            0,
+            0
+          ]
+        },
+        "64570781577ed62c8a6be5d3": {
+          "type": "block",
+          "data": {
+            "name": "New Block 22",
+            "steps": [
+              "64570781577ed62c8a6be5d0"
+            ]
+          },
+          "nodeID": "64570781577ed62c8a6be5d3",
+          "coords": [
+            1225.2133031387068,
+            -1467.9611080322486
+          ]
+        },
+        "6457079a577ed62c8a6be5db": {
+          "type": "actions",
+          "data": {
+            "name": "",
+            "steps": [
+              "645708b2577ed62c8a6be609"
+            ]
+          },
+          "nodeID": "6457079a577ed62c8a6be5db",
+          "coords": [
+            0,
+            0
+          ]
+        },
+        "64570827577ed62c8a6be5f9": {
+          "type": "text",
+          "data": {
+            "name": "Text",
+            "texts": [
+              {
+                "id": "xn1r436nm",
+                "content": [
+                  {
+                    "children": [
+                      {
+                        "text": "Making a transaction to..."
+                      }
+                    ]
+                  },
+                  {
+                    "children": [
+                      {
+                        "text": ""
+                      }
+                    ]
+                  },
+                  {
+                    "children": [
+                      {
+                        "text": "Destination Name: "
+                      },
+                      {
+                        "id": "transactionDestinationName",
+                        "name": "transactionDestinationName",
+                        "isSlot": false,
+                        "type": "variable",
+                        "children": [
+                          {
+                            "text": ""
+                          }
+                        ]
+                      },
+                      {
+                        "text": " "
+                      }
+                    ]
+                  },
+                  {
+                    "children": [
+                      {
+                        "text": "Destination Address: "
+                      },
+                      {
+                        "id": "transactionDestinationAddress",
+                        "name": "transactionDestinationAddress",
+                        "isSlot": false,
+                        "type": "variable",
+                        "children": [
+                          {
+                            "text": ""
+                          }
+                        ]
+                      },
+                      {
+                        "text": " "
+                      }
+                    ]
+                  },
+                  {
+                    "children": [
+                      {
+                        "text": "Amount: $"
+                      },
+                      {
+                        "id": "transactionAmount",
+                        "name": "transactionAmount",
+                        "isSlot": false,
+                        "type": "variable",
+                        "children": [
+                          {
+                            "text": ""
+                          }
+                        ]
+                      },
+                      {
+                        "text": " "
+                      }
+                    ]
+                  },
+                  {
+                    "children": [
+                      {
+                        "text": "Currency: "
+                      },
+                      {
+                        "id": "transactionCurrency",
+                        "name": "transactionCurrency",
+                        "isSlot": false,
+                        "type": "variable",
+                        "children": [
+                          {
+                            "text": ""
+                          }
+                        ]
+                      },
+                      {
+                        "text": " "
+                      }
+                    ]
+                  },
+                  {
+                    "children": [
+                      {
+                        "text": "Ripple Amount: "
+                      },
+                      {
+                        "id": "transactionRippleAmount",
+                        "name": "transactionRippleAmount",
+                        "type": "variable",
+                        "children": [
+                          {
+                            "text": ""
+                          }
+                        ]
+                      },
+                      {
+                        "text": " "
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "canvasVisibility": "preview",
+            "portsV2": {
+              "byKey": {},
+              "builtIn": {
+                "next": {
+                  "type": "next",
+                  "target": "64570781577ed62c8a6be5d3",
+                  "id": "64570827577ed62c8a6be5fa",
+                  "data": {
+                    "points": [
+                      {
+                        "point": [
+                          976.33,
+                          -1682.23
+                        ]
+                      },
+                      {
+                        "point": [
+                          1018.27,
+                          -1682.23
+                        ]
+                      },
+                      {
+                        "point": [
+                          1018.27,
+                          -1440.96
+                        ]
+                      },
+                      {
+                        "point": [
+                          1060.21,
+                          -1440.96
+                        ],
+                        "allowedToTop": true
+                      }
+                    ]
+                  }
+                }
+              },
+              "dynamic": []
+            }
+          },
+          "nodeID": "64570827577ed62c8a6be5f9"
+        },
+        "64570827577ed62c8a6be5fc": {
+          "type": "block",
+          "data": {
+            "name": "New Block 19 copy",
+            "color": "",
+            "steps": [
+              "64570827577ed62c8a6be5f9"
+            ]
+          },
+          "nodeID": "64570827577ed62c8a6be5fc",
+          "coords": [
+            887.7133031387067,
+            -1812.9611080322486
+          ]
+        },
+        "645708b2577ed62c8a6be609": {
+          "type": "setV2",
+          "data": {
+            "name": "",
+            "sets": [
+              {
+                "type": "advance",
+                "variable": "transactionRippleAmount",
+                "expression": "{{[transactionAmount].transactionAmount}} / 0.62;"
+              },
+              {
+                "type": "advance",
+                "variable": "transactionExchangeRate",
+                "expression": "0.6184"
+              }
+            ],
+            "title": "",
+            "portsV2": {
+              "byKey": {},
+              "builtIn": {
+                "next": {
+                  "type": "next",
+                  "target": "6457041d577ed62c8a6be5a6",
+                  "id": "645708b2577ed62c8a6be60a",
+                  "data": {}
+                }
+              },
+              "dynamic": []
+            }
+          },
+          "nodeID": "645708b2577ed62c8a6be609"
+        },
+        "64570919577ed62c8a6be614": {
+          "type": "setV2",
+          "data": {
+            "name": "",
+            "sets": [
+              {
+                "type": "advance",
+                "variable": "transactionRippleAmount",
+                "expression": "{{[transactionAmount].transactionAmount}} / 0.46"
+              },
+              {
+                "type": "advance",
+                "variable": "transactionExchangeRate",
+                "expression": "0.458857"
+              }
+            ],
+            "title": "",
+            "portsV2": {
+              "byKey": {},
+              "builtIn": {
+                "next": {
+                  "type": "next",
+                  "target": "6457041d577ed62c8a6be5a6",
+                  "id": "64570919577ed62c8a6be616",
+                  "data": {}
+                }
+              },
+              "dynamic": []
+            }
+          },
+          "nodeID": "64570919577ed62c8a6be614"
+        },
+        "64570919577ed62c8a6be615": {
+          "type": "actions",
+          "data": {
+            "name": "",
+            "steps": [
+              "64570919577ed62c8a6be614"
+            ]
+          },
+          "nodeID": "64570919577ed62c8a6be615",
+          "coords": [
+            0,
+            0
+          ]
+        },
+        "64570937577ed62c8a6be61e": {
+          "type": "setV2",
+          "data": {
+            "name": "",
+            "sets": [
+              {
+                "type": "advance",
+                "variable": "transactionExchangeRate",
+                "expression": "0.458857"
+              },
+              {
+                "type": "advance",
+                "variable": "transactionRippleAmount",
+                "expression": "{{[transactionAmount].transactionAmount}}/{{[transactionExchangeRate].transactionExchangeRate}}"
+              }
+            ],
+            "title": "",
+            "portsV2": {
+              "byKey": {},
+              "builtIn": {
+                "next": {
+                  "type": "next",
+                  "target": "6457041d577ed62c8a6be5a6",
+                  "id": "64570937577ed62c8a6be620",
+                  "data": {}
+                }
+              },
+              "dynamic": []
+            }
+          },
+          "nodeID": "64570937577ed62c8a6be61e"
+        },
+        "64570937577ed62c8a6be61f": {
+          "type": "actions",
+          "data": {
+            "name": "",
+            "steps": [
+              "64570937577ed62c8a6be61e"
+            ]
+          },
+          "nodeID": "64570937577ed62c8a6be61f",
+          "coords": [
+            0,
+            0
+          ]
+        },
+        "64570ab0577ed62c8a6be630": {
+          "type": "api",
+          "data": {
+            "name": "",
+            "url": "https://invoice-generator.com/",
+            "body": [
+              {
+                "key": "from",
+                "val": "Hi"
+              },
+              {
+                "key": "to",
+                "val": "hi"
+              }
+            ],
+            "params": [],
+            "method": "POST",
+            "headers": [
+              {
+                "key": "content-type",
+                "val": "application/octet-stream; charset=UTF-8"
+              }
+            ],
+            "content": "",
+            "mappings": [
+              {
+                "path": "content",
+                "var": "content"
+              }
+            ],
+            "bodyType": "formData",
+            "selectedAction": "Make a POST Request",
+            "selectedIntegration": "Custom API",
+            "portsV2": {
+              "byKey": {},
+              "builtIn": {
+                "next": {
+                  "type": "next",
+                  "target": null,
+                  "id": "64570ab0577ed62c8a6be631"
+                },
+                "fail": {
+                  "type": "fail",
+                  "target": null,
+                  "id": "64570ab0577ed62c8a6be632"
+                }
+              },
+              "dynamic": []
+            }
+          },
+          "nodeID": "64570ab0577ed62c8a6be630"
+        },
+        "64570ab0577ed62c8a6be633": {
+          "type": "block",
+          "data": {
+            "name": "New Block 24",
+            "steps": [
+              "64570ab0577ed62c8a6be630"
+            ]
+          },
+          "nodeID": "64570ab0577ed62c8a6be633",
+          "coords": [
+            2028.9633031387068,
+            -1301.7111080322486
           ]
         }
       }
